@@ -6,3 +6,79 @@
 #raining>.location>.town{
 	font-weight:bold;
 } */
+
+#nav-frame{
+	background-color: #FFD77C;
+	height:55px;
+}
+.describe{
+	height:260px;
+}
+#describe-frame>#mascot{
+	position:absolute;
+	left:119px;
+	top:-5px;
+}
+#describe-frame>input{
+	position: absolute;
+	left:8.7%;
+	top: 210px;
+	width:15%;
+	height:33px;
+	border-radius: 20px;
+	padding-left:15px;
+	font-family: sans-serif;
+	font-size:22px;
+	line-height: 22px;
+}
+#describe-frame>input:hover{
+	cursor: pointer;
+}
+#describe-frame>input:focus{
+	outline:none;
+}
+#describe-frame>#board{
+	position: absolute;
+	top: 45px;
+	right:7.8%;
+	width:58%;
+	height:200px;
+}
+#describe-frame>#teacher{
+	position: absolute;
+	top: 85px;
+	right:30%;
+	width:15%;
+	height:180px;
+}
+#describe-frame>#teacher:hover{
+	cursor: pointer;
+	opacity: 0.9;
+}
+.temp{
+	position: absolute;
+	left:36%;	
+	top:65px;
+	font-weight: bold;
+	font-family: sans-serif;
+	opacity: 0;
+	transition:1.5s;	
+}
+.UV{
+	position: absolute;
+	right:13%;	
+	top:65px;
+	font-weight: bold;
+	font-family: sans-serif;
+	opacity: 0;
+	transition:1.5s;
+}
+.data{
+	font-size:68px;
+	position:absolute;
+	top:45px;
+	left:75px;
+	color:rgb(49, 95, 182);
+}
+
+
