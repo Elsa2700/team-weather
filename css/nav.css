@@ -21,9 +21,9 @@
 }
 #describe-frame>input{
 	position: absolute;
-	left:133px;
+	left:8.7%;
 	top: 210px;
-	width:231px;
+	width:15%;
 	height:33px;
 	border-radius: 20px;
 	padding-left:15px;
@@ -40,15 +40,15 @@
 #describe-frame>#board{
 	position: absolute;
 	top: 45px;
-	right:120px;
-	width:890px;
+	right:7.8%;
+	width:58%;
 	height:200px;
 }
 #describe-frame>#teacher{
 	position: absolute;
 	top: 85px;
-	right:450px;
-	width:240px;
+	right:30%;
+	width:15%;
 	height:180px;
 }
 #describe-frame>#teacher:hover{
@@ -57,7 +57,7 @@
 }
 .temp{
 	position: absolute;
-	left:550px;	
+	left:36%;	
 	top:65px;
 	font-weight: bold;
 	font-family: sans-serif;
@@ -66,7 +66,7 @@
 }
 .UV{
 	position: absolute;
-	right:200px;	
+	right:13%;	
 	top:65px;
 	font-weight: bold;
 	font-family: sans-serif;
@@ -80,3 +80,5 @@
 	left:75px;
 	color:rgb(49, 95, 182);
 }
+
+
