@@ -35,6 +35,11 @@ function renderRaining(page){
 	}
 }
 */
+
+
+var city = "";
+var menu = document.querySelector("#describe-frame > select");
+menu.addEventListener("change" , getCity);
 /*
     此函數為取得全台平均紫外線數值
 */
@@ -100,6 +105,7 @@ function getTemp(){
         data = json.records.locations[0].location; 
         let temp = 0;
         data.forEach( ele => {
+            makeMenu(ele.locationName);
             for(let i =0; i < 2 ; i++){
                 temp = temp + parseInt(ele.weatherElement[0].time[i].elementValue[0].value);
             };
@@ -129,3 +135,19 @@ function getTemp(){
 //一開始先將取得溫度事件註冊到圖片上
 let skyChi = document.querySelector("#teacher");
 skyChi.addEventListener("click" , getTemp );
+
+
+function makeMenu(city){
+    let menu = document.querySelector("#describe-frame > select");
+    let option = document.createElement("option");
+    let text = document.createTextNode(city);
+    option.appendChild(text);
+    menu.appendChild(option);
+}
+
+function getCity(){
+    let menu = document.querySelector("#describe-frame > select");
+    let index = menu.selectedIndex;
+    let select_city = menu.options[index].value;
+    city = select_city;
+}
