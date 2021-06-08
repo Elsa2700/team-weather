@@ -6,3 +6,54 @@
 #raining>.location>.town{
 	font-weight:bold;
 } */
+
+*::selection {
+	color: white;
+	background: #5a3410;
+}
+
+#weather-frame {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: block;
+	color: #5a2e04;
+}
+
+#weather-frame>.fourBox {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#weather-frame>.fourBox>.box {
+	margin: 5%;
+	box-shadow: #dfdad6 1px 1px 7px;
+	border-radius: 5px;
+}
+
+#weather-frame>.fourBox>.box>div {
+	display: flex;
+	justify-content: center;
+	margin: 10% 5%;
+}
+
+#weather-frame>.fourBox>.box>.WXimg {
+	min-height: 100px;
+}
+
+#weather-frame>.fourBox>.box>.WXtxt {
+	min-height: 50px;
+	/* display: flex; */
+	/* align-items: center; */
+	font-size: 16px;
+}
+
+#weather-frame>.fourBox>.box>.PoPdiv>.umbrella {
+	height: 32px;
+	padding: 4px 8px;
+}
+
+#weather-frame>.fourBox>.box>.PoPdiv>.PoPtxt {
+	height: 40px;
+	line-height: 40px;
+}
