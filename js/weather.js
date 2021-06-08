@@ -110,16 +110,28 @@ function getData() {
 				console.log(taipeiLocation[cityIndex].weatherElement)
 				let weatherWX = taipeiLocation[cityIndex].weatherElement[6]
 				let weatherPoP = taipeiLocation[cityIndex].weatherElement[0]
-				let startTime, WXtxt, svgNumber, WXimg, PoPtxt
+				let startTime, endTime, WXtxt, svgNumber, WXimg, PoPtxt
 				for (let boxIndex = 0; boxIndex < 4; boxIndex++) {
 					// 顯示 start time
 					startTime = weatherWX.time[boxIndex].startTime
-					document.getElementsByClassName('startTime')[boxIndex].innerHTML = startTime.split(' ')[0]
+					endTime = weatherWX.time[boxIndex].endTime
+					document.getElementsByClassName('startTime')[boxIndex].innerHTML = startTime.split(' ')[0].substring(5, 10).replace('-', '/')
+					document.getElementsByClassName('boxHead')[boxIndex].innerHTML = String(startTime.split(' ')[1].substring(0, 2)) + '-' + (endTime.split(' ')[1].substring(0, 2))
+
 					// 白天or晚上
-					if (startTime[11] === '1') {
+
+					if (String(startTime.substring(11, 13)) === '18') {
 						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '晚上'
+						document.getElementsByClassName('box')[boxIndex].setAttribute('class', 'box night')
+					} else if (String(startTime.substring(11, 13)) === '12') {
+						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '下午'
+						document.getElementsByClassName('box')[boxIndex].setAttribute('class', 'box afternoon')
+					} else if (String(startTime.substring(11, 13)) === '00') {
+						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '凌晨'
+						document.getElementsByClassName('box')[boxIndex].setAttribute('class', 'box dawn')
 					} else {
 						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '白天'
+						document.getElementsByClassName('box')[boxIndex].setAttribute('class', 'box day')
 					}
 					// WX:天氣現象
 					WXtxt = weatherWX.time[boxIndex].elementValue[0].value
@@ -157,6 +169,6 @@ function getData() {
 
 
 
-// "elementName": "Wx",
-// "description": "天氣現象",
+
+
 
