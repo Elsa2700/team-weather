@@ -1,8 +1,9 @@
 /*
 【注意事項】
 1.基本串接對象
+url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-089?Authorization=CWB-2EF6C203-2256-404D-AD80-5E9DE0982C6A'
 API: https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-089臺灣各鄉鎮市區預報資料-臺灣各鄉鎮市區未來2天(逐3小時)
-項目: 
+項目:
 a. "elementValue": [{"value": "晴",...}..],(天氣狀況，建議用陰、晴兩種圖片來顯示，可跟menu中顯示圖片統一表示或其他呈現)
 b. "elementName": "T", "description": "溫度",
 c. "elementName": "PoP12h","description": "12小時降雨機率",
@@ -42,3 +43,120 @@ function renderRaining(page){
 	}
 }
 */
+
+
+
+weatherFrameController()
+function weatherFrameController() {
+	renderHTML()
+	getData()
+}
+
+function renderHTML() {
+	document.getElementsByClassName('weather')[0].innerHTML = '<div id="weather-frame"></div>'
+	let weatherFrameHTML = `
+        <div class="fourBox">
+          <div class="box">
+            <div class="startTime"></div>
+            <div class="boxHead"></div>
+            <!-- <div class="boxBody"> -->
+            <div class="WXimg"></div>
+            <div class="WXtxt"></div>
+            <!-- </div> -->
+          </div>
+          <div class="box">
+            <div class="startTime"></div>
+            <div class="boxHead"></div>
+            <!-- <div class="boxBody"> -->
+            <div class="WXimg"></div>
+            <div class="WXtxt"></div>
+            <!-- </div> -->
+          </div>
+          <div class="box">
+            <div class="startTime"></div>
+            <div class="boxHead"></div>
+            <!-- <div class="boxBody"> -->
+            <div class="WXimg"></div>
+            <div class="WXtxt"></div>
+            <!-- </div> -->
+          </div>
+          <div class="box">
+            <div class="startTime"></div>
+            <div class="boxHead"></div>
+            <!-- <div class="boxBody"> -->
+            <div class="WXimg"></div>
+            <div class="WXtxt"></div>
+            <!-- </div> -->
+          </div>
+        </div>
+	`
+	document.getElementById('weather-frame').innerHTML = (weatherFrameHTML)
+}
+
+let records = null
+let locationName = '臺北市'
+
+function getData() {
+	fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=" + CWB_API_KEY).then((response) => {
+		return response.json()
+	}).then((data) => {
+		records = data.records
+		taipeiLocation = records.locations[0].location
+		// 圖在這裡
+		// https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/01.svg
+		let svgurl = 'https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/'
+		for (let cityIndex = 0; cityIndex < taipeiLocation.length; cityIndex++) {
+			if (taipeiLocation[cityIndex].locationName === locationName) {
+				console.log(taipeiLocation[cityIndex].weatherElement)
+				let weatherWX = taipeiLocation[cityIndex].weatherElement[6]
+				let weatherPoP = taipeiLocation[cityIndex].weatherElement[0]
+				let startTime, WXtxt, svgNumber, WXimg, PoPtxt
+				for (let boxIndex = 0; boxIndex < 4; boxIndex++) {
+					// 顯示 start time
+					startTime = weatherWX.time[boxIndex].startTime
+					document.getElementsByClassName('startTime')[boxIndex].innerHTML = startTime.split(' ')[0]
+					// 白天or晚上
+					if (startTime[11] === '1') {
+						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '晚上'
+					} else {
+						document.getElementsByClassName('boxHead')[boxIndex].innerHTML = '白天'
+					}
+					// WX:天氣現象
+					WXtxt = weatherWX.time[boxIndex].elementValue[0].value
+					svgNumber = weatherWX.time[boxIndex].elementValue[1].value
+					WXimg = document.createElement('img')
+					WXimg.setAttribute('src', svgurl + svgNumber + '.svg')
+					document.getElementsByClassName('WXimg')[boxIndex].appendChild(WXimg)
+					document.getElementsByClassName('WXtxt')[boxIndex].innerHTML = WXtxt
+
+					// PoP12h: 降雨機率
+					let PoP = document.createElement('div')
+					PoP.setAttribute('class', 'PoPdiv')
+					document.getElementsByClassName('box')[boxIndex].appendChild(PoP)
+
+					let PoPumbrella = document.createElement('img')
+					PoPumbrella.setAttribute('class', 'umbrella')
+					PoPumbrella.setAttribute('src', './img/umbrella.png')
+					document.getElementsByClassName('PoPdiv')[boxIndex].appendChild(PoPumbrella)
+
+					PoPtxt = weatherPoP.time[boxIndex].elementValue[0].value
+					let PoPdiv = document.createElement('div')
+					PoPdiv.appendChild(document.createTextNode(PoPtxt + '%'))
+					PoPdiv.setAttribute('class', 'PoPtxt')
+					document.getElementsByClassName('PoPdiv')[boxIndex].appendChild(PoPdiv)
+
+
+
+				}
+			}
+		}
+	})
+}
+
+
+
+
+
+// "elementName": "Wx",
+// "description": "天氣現象",
+
