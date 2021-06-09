@@ -23,6 +23,7 @@
 #weather-frame>.fourBox {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+	line-height: 40px;
 }
 
 #weather-frame>.fourBox>.box {
@@ -63,17 +64,19 @@
 
 #weather-frame>.fourBox>.box>.WXtxt {
 	min-height: 50px;
-	/* display: flex; */
-	/* align-items: center; */
 	font-size: 16px;
 }
 
-#weather-frame>.fourBox>.box>.PoPdiv>.umbrella {
+#weather-frame>.fourBox>.box img {
 	height: 32px;
-	padding: 4px 8px;
+	padding: 4px 8px 4px 0;
+}
+
+#weather-frame>.fourBox>.box>.WXimg img {
+	height: 100%;
 }
 
 #weather-frame>.fourBox>.box>.PoPdiv>.PoPtxt {
 	height: 40px;
-	line-height: 40px;
+	width: 60px;
 }

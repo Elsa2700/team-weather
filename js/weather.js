@@ -107,9 +107,13 @@ function getData() {
 		let svgurl = 'https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/'
 		for (let cityIndex = 0; cityIndex < taipeiLocation.length; cityIndex++) {
 			if (taipeiLocation[cityIndex].locationName === locationName) {
-				console.log(taipeiLocation[cityIndex].weatherElement)
+				// console.log(taipeiLocation[cityIndex].weatherElement)
 				let weatherWX = taipeiLocation[cityIndex].weatherElement[6]
 				let weatherPoP = taipeiLocation[cityIndex].weatherElement[0]
+				let weatherMinT = taipeiLocation[cityIndex].weatherElement[8]
+				let weatherMaxT = taipeiLocation[cityIndex].weatherElement[12]
+				let weatherMinAT = taipeiLocation[cityIndex].weatherElement[11]
+				let weatherMaxAT = taipeiLocation[cityIndex].weatherElement[5]
 				let startTime, endTime, WXtxt, svgNumber, WXimg, PoPtxt
 				for (let boxIndex = 0; boxIndex < 4; boxIndex++) {
 					// 顯示 start time
@@ -157,6 +161,36 @@ function getData() {
 					PoPdiv.setAttribute('class', 'PoPtxt')
 					document.getElementsByClassName('PoPdiv')[boxIndex].appendChild(PoPdiv)
 
+					// MinT 最低溫度 MaxT 最高溫度
+					let T = document.createElement('div')
+					T.setAttribute('class', 'Tdiv')
+					document.getElementsByClassName('box')[boxIndex].appendChild(T)
+
+					let Ttemperature = document.createElement('img')
+					Ttemperature.setAttribute('class', 'umbrella')
+					Ttemperature.setAttribute('src', './img/temperature.png')
+					document.getElementsByClassName('Tdiv')[boxIndex].appendChild(Ttemperature)
+
+					let Ttxt = (weatherMinT.time[boxIndex].elementValue[0].value) + '-' + (weatherMaxT.time[boxIndex].elementValue[0].value)
+					let Tdiv = document.createElement('div')
+					Tdiv.appendChild(document.createTextNode(Ttxt))
+					document.getElementsByClassName('Tdiv')[boxIndex].appendChild(Tdiv)
+
+					// 體感溫度
+					let AT = document.createElement('div')
+					AT.setAttribute('class', 'ATdiv')
+					document.getElementsByClassName('box')[boxIndex].appendChild(AT)
+
+					let ATtemperature = document.createElement('img')
+					ATtemperature.setAttribute('class', 'feeltemp')
+					ATtemperature.setAttribute('src', './img/feel.png')
+					ATtemperature.setAttribute('title', '體感溫度')
+					document.getElementsByClassName('ATdiv')[boxIndex].appendChild(ATtemperature)
+
+					let ATtxt = (weatherMinAT.time[boxIndex].elementValue[0].value) + '-' + (weatherMaxAT.time[boxIndex].elementValue[0].value)
+					let ATdiv = document.createElement('div')
+					ATdiv.appendChild(document.createTextNode(ATtxt))
+					document.getElementsByClassName('ATdiv')[boxIndex].appendChild(ATdiv)
 
 
 				}
