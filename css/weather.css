@@ -6,3 +6,77 @@
 #raining>.location>.town{
 	font-weight:bold;
 } */
+
+*::selection {
+	color: white;
+	background: #5a3410;
+}
+
+#weather-frame {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: block;
+	color: #5a2e04;
+}
+
+#weather-frame>.fourBox {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	line-height: 40px;
+}
+
+#weather-frame>.fourBox>.box {
+	margin: 5%;
+	box-shadow: #dfdad6 1px 1px 7px;
+	border-radius: 5px;
+	transition: all .1s;
+}
+
+#weather-frame>.fourBox>.night {
+	background-color: #636160;
+	color: wheat;
+}
+
+#weather-frame>.fourBox>.day {
+	background-color: #f7f5ee;
+	color: #5a3410;
+}
+
+#weather-frame>.fourBox>.afternoon, #weather-frame>.fourBox>.dawn {
+	background-color: #beb9a9;
+	color: #5a3410;
+}
+
+#weather-frame>.fourBox>.box:hover {
+	box-shadow: #dfdad6 1px 1px 12px;
+}
+
+#weather-frame>.fourBox>.box>div {
+	display: flex;
+	justify-content: center;
+	margin: 10% 5%;
+}
+
+#weather-frame>.fourBox>.box>.WXimg {
+	min-height: 100px;
+}
+
+#weather-frame>.fourBox>.box>.WXtxt {
+	min-height: 50px;
+	font-size: 16px;
+}
+
+#weather-frame>.fourBox>.box img {
+	height: 32px;
+	padding: 4px 8px 4px 0;
+}
+
+#weather-frame>.fourBox>.box>.WXimg img {
+	height: 100%;
+}
+
+#weather-frame>.fourBox>.box>.PoPdiv>.PoPtxt {
+	height: 40px;
+	width: 60px;
+}
