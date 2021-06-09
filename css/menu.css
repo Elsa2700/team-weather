@@ -6,3 +6,27 @@
 #raining>.location>.town{
 	font-weight:bold;
 } */
+
+
+/* width: minmax(345px, 510px) */
+
+#menu-frame{
+	display: gird;
+	grid-template-areas: 
+	"auto auto auto auto"
+	"auto auto auto auto"
+	"auto auto auto auto"
+	"auto auto auto auto"
+	"auto auto auto auto"
+	;
+
+}
+
+.administrative_district{
+	margin: 5px;
+	width: 70px;
+	height: 70px;
+	background-color: gray;
+	border: 1px solid black;
+
+}

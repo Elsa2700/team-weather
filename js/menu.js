@@ -40,3 +40,29 @@ c. "elementValue": [{"value": "多雲。降雨機率 10%。...}] (我找到概�
 // 		container.appendChild(item);
 // 	}
 // }
+
+
+menuFrameController()
+function menuFrameController(){
+    renderHTML()
+	// getData()
+}
+
+
+function renderHTML(){
+    document.getElementsByClassName('menu')[0].innerHTML = '<div id="menu-frame"></div>'
+    let menu_frame = document.querySelector('#menu-frame');
+    
+    
+    for (let i = 0; i < 21; i++){
+        let box_area = document.createElement('div');
+        box_area.setAttribute('class', 'administrative_district')
+        menu_frame.append(box_area)
+        console.log(i)
+    }
+}
+
+
+function getData(){
+
+}
