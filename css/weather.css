@@ -80,3 +80,12 @@
 	height: 40px;
 	width: 60px;
 }
+
+#weather-frame>.fourBox>.box>.loadboxdiv {
+	display: flex;
+	justify-content: center;
+}
+
+#weather-frame>.fourBox>.box>.loadboxdiv>.loadbox {
+	height: 10vw;
+}
