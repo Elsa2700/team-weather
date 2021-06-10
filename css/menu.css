@@ -15,10 +15,10 @@
 }
 
 .menu{
-	/* border-right: 2px dotted gray;  */
 	height: 100vh;
 	overflow:auto;
 	/* overflow: hidden; */
+	/* margin-right: -30px; */
 }
 
 
@@ -26,8 +26,11 @@
 	display: grid;
 
 	grid-template-columns: 1fr 1fr;
-	border: 2px outset;
-	overflow:auto;
+	border-right: 2px dashed;
+	padding-right: 0.5rem;
+	/* border: 2px outset; */
+	/* overflow:scroll; */
+	/* overflow: hidden; */
 	
 }
 
@@ -37,7 +40,7 @@
 
 .description{
 	text-align: center;
-	font-size:x-large;
+	font-size: 1rem;
 }
 
 .administrative_district{
@@ -45,7 +48,6 @@
 	width: auto;
 	height: 75px;
 	background-color: rgb(79, 130, 206);
-	/* border: 1px solid black; */
 	
 	display: grid;
 	grid-template-areas: 
