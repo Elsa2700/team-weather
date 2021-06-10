@@ -1,44 +1,50 @@
-body{
-	font-size:20px;
+body {
+	font-size: 24px;
 	padding: 0px;
 	margin: 0px;
 	height: 100vh;
+	font-weight: bold;
+	background-color: rgba(226, 233, 160, 0.1);
 }
 .container{
 	max-width: 1500px;
 	margin: auto;
 }
 
-.nav{
+.container {
+	max-width: 1500px;
+	margin: auto;
+}
+
+.nav {
 	/* background-color: rgb(206, 233, 162); */
-	height: 8vh;
+	/* height: 8vh; */
 	width: 100vw;
 }
-.describe{
+
+
+.describe {
 	/* background-color: rgb(46, 8, 8); */
 	height: 25vh;
-	margin: auto;
+	/* margin: auto; */
+}
 
-}
-.main{
-	/* background-color: aquamarine; */
-	display: flex;
-	margin: auto;
-	height: 67vh;
+/* .main { */
 
+/* background-color: aquamarine; */
+
+/* display: flex; */
+
+/* margin: auto; */
+
+/* height: 67vh; */
+
+/* } */
+
+.main {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
 }
-.menu{
-	/* background-color: rgb(159, 154, 224); */
-	width: 500px;
-}
-.weather{
-	/* background-color: bisque; */
-	width: 1000px;
-    height: 70%;
-	/* display: none; */
-}
-.graph{
-	/* background-color: rgb(129, 88, 36); */
-	width: 1000px;
-    height: 30%;
-}
+
+

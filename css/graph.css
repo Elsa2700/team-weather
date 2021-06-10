@@ -3,8 +3,36 @@
     align-items:flex-end;
     justify-content: center;
     height:fit-content;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: none;
+
+}
+#graph-frame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #dfdad6 1px 1px 5px;
+    width: 98%;
+
+
+}
+.btnchart:hover {
+	box-shadow: #dfdad6 1px 1px 12px;
+}
+
+.btnchart{
+    /* display: none; */
+    cursor: url(/img/lighting_bolt.png), auto;
+    font-size: 100px;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    line-height: 400px;
+    background-repeat:no-repeat;
+    background-size: 1000px;
+    background-image: url("https://media.giphy.com/media/Wodg2kOPJRLbw3Pfjh/giphy.gif");
+}
+#line{
+    background-color: aquamarine;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
 }

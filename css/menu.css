@@ -1,86 +1,72 @@
 /* 範例:
 #raining{}
 #raining>.location{
-	border-bottom:1px solid #000000;
+  border-bottom:1px solid #000000;
 }
 #raining>.location>.town{
-	font-weight:bold;
+  font-weight:bold;
 } */
-
-
 /* width: minmax(345px, 510px) */
-
-*{
+* {
 	box-sizing: border-box;
-}
-
-.menu{
-	/* border-right: 2px dotted gray;  */
-	height: 100vh;
-}
-
-
-#menu-frame{
+  }
+  .menu {
+	height: 78vh;
+	overflow: auto;
+	/* overflow: hidden; */
+	/* margin-right: -30px; */
+  }
+  #menu-frame {
 	display: grid;
-
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	/* grid-auto-columns:auto; */
-	/* grid-auto-flow:row; */
-	/* grid-gap:1px; */
-
-	border: 2px outset;
-	
-	/* transition: box-shadow .3s; */
-}
-
-.description{
+    grid-template-columns: 1fr;
+    padding-right: 0.5rem;
+    margin-top: 10px;
+	/* border: 2px outset; */
+	/* overflow:scroll; */
+	/* overflow: hidden; */
+  }
+  ::-webkit-scrollbar {
+	display: none;
+	/* Chrome Safari */
+  }
+  .description {
 	text-align: center;
-	font-size:x-large;
-}
-
-.administrative_district{
+	font-size: 2rem;
+	display: none;
+  }
+  .administrative_district {
+    height: 200px;
 	margin: 5px;
 	width: auto;
-	height: 70px;
-	background-color: rgb(79, 130, 206);
-	/* border: 1px solid black; */
-	
+	/* background-color: #636160; */
 	display: grid;
-	grid-template-areas: 
-	'1fr' 
-	'1fr';
+	/* grid-template-areas: '1fr' '1fr'; */
 	justify-items: center;
 	align-items: center;
 	border-radius: 5px;
-	cursor: pointer;
-	box-shadow: 0 3px 5px rgba(33,33,33,.2); 
-	transition: all 300ms ease-in-out;
-	
-}
-
-#menu-frame :hover {
-	box-shadow: 0px 8px 15px;
+	/* cursor: pointer; */
+	box-shadow: 0 3px 5px #aaa9a5;
+	transition: all 200ms ease-in-out;
+  }
+  #menu-frame :hover {
+	box-shadow: 0px 3px 3px #636160;
 	/* height: 71px; */
-	
-}
-
-
-
-.location_name{
-	font-size: 15px;
+  }
+  .location_name {
+	font-size: 1.5rem;
 	/* text-align: center; */
-	color: cornsilk;
-	pointer-events:none
-}
-
-.location_whether{
-	width: 30px;
-	pointer-events:none
-}
-
-.location_raining_rate{
-	font-size: 10px;
+	/* color: cornsilk; */
+	color: #636160;
+	pointer-events: none
+  }
+  .location_whether {
+	width: 80px;
+	pointer-events: none
+  }
+  .location_raining_rate {
+	font-size: 1.5rem;
 	/* text-align: center; */
-	color: cornsilk;
-	pointer-events:none
-}
+	/* color: cornsilk; */
+	color: #636160;
+	pointer-events: none
+  }
