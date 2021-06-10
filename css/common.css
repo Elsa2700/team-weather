@@ -4,6 +4,10 @@ body {
 	margin: 0px;
 	height: 100vh;
 }
+.container{
+	max-width: 1500px;
+	margin: auto;
+}
 
 .container {
 	max-width: 1500px;
@@ -15,6 +19,7 @@ body {
 	/* height: 8vh; */
 	width: 100vw;
 }
+
 
 .describe {
 	/* background-color: rgb(46, 8, 8); */
@@ -40,21 +45,19 @@ body {
 	grid-template-columns: 1fr 2fr;
 }
 
-/* .menu {
-	background-color: rgb(159, 154, 224);
+.menu{
+	/* background-color: rgb(159, 154, 224); */
 	width: 500px;
 }
-
-.weather {
-	background-color: bisque;
+.weather{
+	/* background-color: bisque; */
 	width: 1000px;
-	height: 70%;
-	display: none;
+    height: 70%;
+	/* display: none; */
+}
+.graph{
+	/* background-color: rgb(129, 88, 36); */
+	width: 1000px;
+    height: 30%;
 }
 
-.graph {
-	background-color: rgb(129, 88, 36); 
-	width: 1000px;
-	height: 30%;
-} 
-*/
