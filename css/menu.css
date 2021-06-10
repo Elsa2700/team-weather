@@ -17,21 +17,23 @@
 .menu{
 	/* border-right: 2px dotted gray;  */
 	height: 100vh;
+	overflow:auto;
+	/* overflow: hidden; */
 }
 
 
 #menu-frame{
 	display: grid;
 
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	/* grid-auto-columns:auto; */
-	/* grid-auto-flow:row; */
-	/* grid-gap:1px; */
-
+	grid-template-columns: 1fr 1fr;
 	border: 2px outset;
+	overflow:auto;
 	
-	/* transition: box-shadow .3s; */
 }
+
+::-webkit-scrollbar {
+	display: none; /* Chrome Safari */
+  }
 
 .description{
 	text-align: center;
@@ -41,7 +43,7 @@
 .administrative_district{
 	margin: 5px;
 	width: auto;
-	height: 70px;
+	height: 75px;
 	background-color: rgb(79, 130, 206);
 	/* border: 1px solid black; */
 	
@@ -67,7 +69,7 @@
 
 
 .location_name{
-	font-size: 15px;
+	font-size: 1rem;
 	/* text-align: center; */
 	color: cornsilk;
 	pointer-events:none
@@ -79,7 +81,7 @@
 }
 
 .location_raining_rate{
-	font-size: 10px;
+	font-size: 0.5rem;
 	/* text-align: center; */
 	color: cornsilk;
 	pointer-events:none
