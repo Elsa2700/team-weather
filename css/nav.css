@@ -6,73 +6,23 @@
 #raining>.location>.town{
 	font-weight:bold;
 } */
-
-#nav-frame{
+.nav{
 	background-color: #FFD77C;
-	height:55px;
 }
-.describe{
-	height:260px;
-}
-#describe-frame>#mascot{
-	position:absolute;
-	left:119px;
-	top:-5px;
-}
-.citys{
-	position: absolute;
-	left:8.7%;
-	top: 210px;
-	width:15%;
-	height:33px;
-	padding-left:15px;
-	font-family: sans-serif;
-	font-size:18px;
-	line-height: 20px;
-	text-align: center;
-}
-#describe-frame>#board{
-	position: absolute;
-	top: 45px;
-	right:7.8%;
-	width:58%;
-	height:200px;
-}
-#describe-frame>#teacher{
-	position: absolute;
-	top: 85px;
-	right:30%;
-	width:15%;
-	height:180px;
-}
-#describe-frame>#teacher:hover{
-	cursor: pointer;
-	opacity: 0.9;
-}
-.temp{
-	position: absolute;
-	left:36%;	
-	top:65px;
+#nav-frame{
+	height:100%;
+	margin:0px;
+	position: relative;
+	margin:auto;
+	font-size:1.2rem;
 	font-weight: bold;
-	font-family: sans-serif;
-	opacity: 0;
-	transition:1.5s;	
+	width:50%;
+	color:rgb(75, 72, 72);
 }
-.UV{
-	position: absolute;
-	right:13%;	
-	top:65px;
+#nav-frame > marquee{
+	height:80%;
+	font-size:1.5rem;
 	font-weight: bold;
-	font-family: sans-serif;
-	opacity: 0;
-	transition:1.5s;
+	line-height: 1.5rem;
+	padding-top:10px;
 }
-.data{
-	font-size:68px;
-	position:absolute;
-	top:45px;
-	left:75px;
-	color:rgb(49, 95, 182);
-}
-
-
