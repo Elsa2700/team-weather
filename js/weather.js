@@ -50,7 +50,13 @@ weatherFrameController()
 function weatherFrameController() {
 	renderHTML()
 	getData()
+	getlocationName()
 }
+function rerender() {
+	renderHTML()
+	getData()
+}
+
 
 function renderHTML() {
 	document.getElementsByClassName('weather')[0].innerHTML = '<div id="weather-frame"></div>'
@@ -58,8 +64,11 @@ function renderHTML() {
         <div class="fourBox">
           <div class="box">
             <div class="startTime"></div>
-            <div class="boxHead"></div>
-            <!-- <div class="boxBody"> -->
+						<div class="boxHead"></div>
+						<!-- <div class="boxBody"> -->
+						<div class="loadboxdiv">
+							<img src="./img/loadbox.gif" class="loadbox">
+						</div>
             <div class="WXimg"></div>
             <div class="WXtxt"></div>
             <!-- </div> -->
@@ -67,7 +76,10 @@ function renderHTML() {
           <div class="box">
             <div class="startTime"></div>
             <div class="boxHead"></div>
-            <!-- <div class="boxBody"> -->
+						<!-- <div class="boxBody"> -->
+						<div class="loadboxdiv">
+							<img src="./img/loadbox.gif" class="loadbox">
+						</div>
             <div class="WXimg"></div>
             <div class="WXtxt"></div>
             <!-- </div> -->
@@ -75,7 +87,10 @@ function renderHTML() {
           <div class="box">
             <div class="startTime"></div>
             <div class="boxHead"></div>
-            <!-- <div class="boxBody"> -->
+						<!-- <div class="boxBody"> -->
+						<div class="loadboxdiv">
+							<img src="./img/loadbox.gif" class="loadbox">
+						</div>
             <div class="WXimg"></div>
             <div class="WXtxt"></div>
             <!-- </div> -->
@@ -83,7 +98,10 @@ function renderHTML() {
           <div class="box">
             <div class="startTime"></div>
             <div class="boxHead"></div>
-            <!-- <div class="boxBody"> -->
+						<!-- <div class="boxBody"> -->
+						<div class="loadboxdiv">
+							<img src="./img/loadbox.gif" class="loadbox">
+						</div>
             <div class="WXimg"></div>
             <div class="WXtxt"></div>
             <!-- </div> -->
@@ -96,10 +114,20 @@ function renderHTML() {
 let records = null
 let locationName = '臺北市'
 
+function getlocationName() {
+	let selectCity = document.querySelector("#describe-frame > div.mascot > select")
+	selectCity.addEventListener('change', () => {
+		console.log(selectCity.value)
+		locationName = selectCity.value
+		rerender()
+	})
+}
+
 function getData() {
 	fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=" + CWB_API_KEY).then((response) => {
 		return response.json()
 	}).then((data) => {
+		hideLoadBox()
 		records = data.records
 		taipeiLocation = records.locations[0].location
 		// 圖在這裡
@@ -200,9 +228,10 @@ function getData() {
 }
 
 
-
-
-
-
-
-
+function hideLoadBox() {
+	let loadbox = document.querySelectorAll('.loadboxdiv')
+	loadbox[0].style.display = 'none'
+	loadbox[1].style.display = 'none'
+	loadbox[2].style.display = 'none'
+	loadbox[3].style.display = 'none'
+}
