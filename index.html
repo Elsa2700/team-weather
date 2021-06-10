@@ -14,37 +14,66 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<link rel="stylesheet" type="text/css" href="css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/weather.css" />
+	<link rel="stylesheet" type="text/css" href="css/graph.css" />
+
 </head>
 
 <body>
 	<div class="nav">
-		<div>【nav】導覽列(負責人:林瑋晨):導覽資訊(請自行設計XDD)</div>
 		<div id="nav-frame"></div>
 	</div>
-	<div class="describe">
-		<div>【describe】全台天氣概述(負責人:林瑋晨):機不可失Logo、串接全台天氣概述、縣市搜尋欄等</div>
-		<div id="describe-frame"></div>
-	</div>
-	<div class="main">
-		<div class="menu">
-			<div>【menu】各縣市選單列表(負責人:Ko):縣市選單區塊、串接縣市基本氣候資訊、滑動功能</div>
-			<div id="menu-frame"></div>
-		</div>
-		<div class="weather">
-			<div>【weather】詳細的氣象資訊(負責人:Rebecca):串接指定縣市的詳細氣象資訊、設計美美的氣象畫面</div>
-			<div id="weather-frame"></div>
-		</div>
 
+	<div class="container">
+		<div class="describe">
+			<div id="describe-frame">
+				<img src="css/fig/雞不可濕.png" id="mascot">
+				<input type="text" placeholder="search" name="search_weather">
+				<img src="css/fig/老師在講你有沒有在聽.png" id="board">
+				<img src="css/fig/天機不可洩漏.png" id="teacher">
+				<div class="temp">
+					未來一天全台平均氣溫:
+					<div class="data"></div>
+				</div>
+				<div class="UV">
+					本日全台平均紫外線強度:
+					<div class="data"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="main">
+			<div class="menu">
+				<div>【menu】各縣市選單列表(負責人:Ko):縣市選單區塊、串接縣市基本氣候資訊、滑動功能</div>
+				<div id="menu-frame"></div>
+			</div>
+			<div class="weather-graph">
+				<div class="weather">
+					<div>【weather】詳細的氣象資訊(負責人:Rebecca):串接指定縣市的詳細氣象資訊、設計美美的氣象畫面</div>
+					<div id="weather-frame"></div>
+				</div>
+				<div class="graph">
+					<div>【weather】詳細的氣象資訊(負責人:巧穎):串接指定縣市的詳細氣象資訊、設計美美的氣象畫面</div>
+					<div id="graph-frame"></div>
+				</div>
+			</div>
+		</div>
 	</div>
+
 
 	<script>
 		const CWB_API_KEY = "CWB-74F36136-E4D5-46A5-ADC4-7A60C27BBBD5";
 	</script>
-	
-	<script src="js/nav.js"></script>
+
+	<script src="js/nav.js"></script> -->
 	<script src="js/describe.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/weather.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		google.charts.load('current', { packages: ['corechart'] });
+		google.charts.setOnLoadCallback(drawChart);
+	</script>
 </body>
 
 </html>
