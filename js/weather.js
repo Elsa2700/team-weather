@@ -112,7 +112,7 @@ function renderHTML() {
 }
 
 let records = null
-let locationName = '臺北市'
+let locationName = '新竹縣'
 
 function getlocationName() {
 	let selectCity = document.querySelector("#describe-frame > div.mascot > select")

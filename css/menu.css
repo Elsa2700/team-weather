@@ -11,14 +11,15 @@
 	box-sizing: border-box;
   }
   .menu {
-	height: 78vh;
+	  margin-top: 40px;
+	height: 900px;
 	overflow: auto;
-	/* overflow: hidden; */
-	/* margin-right: -30px; */
+
   }
   #menu-frame {
-	display: grid;
-    grid-template-columns: 1fr;
+	align-items: center;
+	display: grid; */
+    /* /* grid-template-columns: 1fr; */
     padding-right: 0.5rem;
     margin-top: 10px;
 	/* border: 2px outset; */
